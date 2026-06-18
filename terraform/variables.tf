@@ -9,7 +9,7 @@ variable "instance_type" {
 
 variable "ami_id" {
     description = "Ubuntu 22.04 ARM64 in eu-west-1"
-    default = "ami-0d64d60b2f8c79c58"
+    default = "ami-04df7d76c1b804451"
 }
 
 variable "key_name" {

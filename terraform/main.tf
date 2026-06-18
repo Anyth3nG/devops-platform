@@ -89,7 +89,7 @@ resource "aws_instance" "control_plane" {
     associate_public_ip_address = true
     key_name = "devops-platform-key"
 
-    tags = { name = "control-plane" }
+    tags = { Name = "control-plane" }
 }
 
 resource "aws_instance" "test_worker" {
@@ -100,7 +100,7 @@ resource "aws_instance" "test_worker" {
     associate_public_ip_address = true
     key_name = "devops-platform-key"
 
-    tags = { name = "test_worker" }
+    tags = { Name = "test_worker" }
 }
 
 resource "aws_instance" "prod_worker" {
@@ -111,6 +111,6 @@ resource "aws_instance" "prod_worker" {
     associate_public_ip_address = true
     key_name = "devops-platform-key"
 
-    tags = { name = "prod_worker" }
+    tags = { Name = "prod_worker" }
 }
 
