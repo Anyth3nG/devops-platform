@@ -52,7 +52,7 @@ resource "aws_security_group" "main" {
         cidr_blocks = ["81.5.52.229/32"]
     }
 
-        ingress {
+    ingress {
         from_port = 10250
         to_port = 10250
         protocol = "tcp"
@@ -73,6 +73,13 @@ resource "aws_security_group" "main" {
         cidr_blocks = ["0.0.0.0/0"]
     }
     
+    ingress {
+        from_port   = 0
+        to_port     = 0
+        protocol    = "-1"
+        cidr_blocks = ["10.0.1.0/24"]
+    }
+    
     egress {
         from_port = 0
         to_port = 0
@@ -83,7 +90,7 @@ resource "aws_security_group" "main" {
 
 resource "aws_instance" "control_plane" {
     ami = var.ami_id
-    instance_type = var.instance_type
+    instance_type = var.control_plane_instance_type
     subnet_id = aws_subnet.main_subnet.id
     vpc_security_group_ids = [aws_security_group.main.id]
     associate_public_ip_address = true

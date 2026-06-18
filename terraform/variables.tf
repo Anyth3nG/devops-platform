@@ -15,3 +15,7 @@ variable "ami_id" {
 variable "key_name" {
     default = "devops-platform-key"
 }
+
+variable "control_plane_instance_type" {
+    default = "t3.small"
+}
