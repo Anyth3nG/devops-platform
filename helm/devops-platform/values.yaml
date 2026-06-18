@@ -1,6 +1,6 @@
 image:
   repository: anyth3ng/devops-platform
-  tag: latetst
+  tag: latest
   pullPolicy: Always
 
 service:
